@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="entity.Goods" table="Goods" >
+        <id name="id" column="id" type="java.lang.Integer">
+            <generator class="identity"/>
+        </id>
+        <property name="name" type="java.lang.String" column="name"/>
+        <property name="imgUrl" type="java.lang.String" column="imgUrl"/>
+        <property name="price" type="java.lang.Double" column="price"/>
+        <property name="stock" type="java.lang.Integer" column="stock"/>
+        <property name="goodsType" type="java.lang.Integer" column="goodsType"/>
+        <set name="accountSet">
+            <key column="gid"></key>
+            <one-to-many class="entity.Account"/>
+        </set>
+    </class>
+</hibernate-mapping>

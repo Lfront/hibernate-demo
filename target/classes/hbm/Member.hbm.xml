@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="entity.Member" table="Member" >
+        <id name="id" column="id" type="java.lang.Integer">
+            <generator class="identity"/>
+        </id>
+        <property name="openId" type="java.lang.String" column="openId"/>
+        <property name="mobile" type="java.lang.String" column="mobile"/>
+        <property name="score" type="java.lang.Integer" column="score"/>
+        <property name="createData" type="java.util.Date" column="createDate"/>
+        <property name="address" type="java.lang.String" column="address"/>
+    </class>
+</hibernate-mapping>

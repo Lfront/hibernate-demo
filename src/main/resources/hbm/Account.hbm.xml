@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="entity.Account" table="Account">
+        <id name="id" column="id" type="java.lang.Integer">
+            <generator class="identity"/>
+        </id>
+        <property name="openId" type="java.lang.String" column="openId"/>
+        <property name="mobile" type="java.lang.String" column="mobile"/>
+<!--        <property name="gid" type="java.lang.Integer" column="gid"/>-->
+        <property name="quantity" type="java.lang.Integer" column="quantity"/>
+        <property name="price" type="java.lang.Double" column="price"/>
+        <property name="createDate" type="java.util.Date" column="createDate"/>
+        <property name="status" type="java.lang.Integer" column="status"/>
+        <property name="expressNo" type="java.lang.String" column="expressNo"/>
+        <!--        多对一映射-->
+        <many-to-one name="Goods" class="entity.Goods" fetch="join">
+            <column name="gid"></column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>
